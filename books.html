@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Books</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo"><img src="./assets/WhatsApp Image 2026-03-10 at 1.16.14 PM.jpeg" alt="pustaka mane" height="100px" width="100px"></div>
+
+<input type="text" id="search" placeholder="Search books..." onkeyup="searchBooks()">
+
+<nav>
+<a href="index.html">Home</a>
+<a href="books.html">Books Rent</a>
+<a href="cart.html">Cart</a>
+<a href="login.html">Login</a>
+<a href="address.html">Address</a>
+
+
+</nav>
+
+</header>
+
+<h2 class="section-title">Categories</h2>
+
+<div class="category-container">
+
+<button class="category-btn" onclick="filterBooks('all')">All</button>
+<button class="category-btn" onclick="filterBooks('coding')">coding</button>
+<button class="category-btn" onclick="filterBooks('English novel')">English Novel</button>
+<button class="category-btn" onclick="filterBooks('kannada novel')">kannada novels</button>
+<button class="category-btn" onclick="filterBooks('learning')">learning</button>
+
+</div>
+
+<h2 class="section-title">All Books</h2>
+
+<div id="bookList" class="book-grid"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

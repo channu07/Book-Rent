@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment - BookRent</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="payment-body">
+
+    <div class="payment-wrapper">
+
+        <div class="payment-left">
+            <h2>💳 Payment Details</h2>
+            <p>Select your payment method and complete your fake payment.</p>
+
+            <div class="payment-methods">
+                <label class="payment-option active-option">
+                    <input type="radio" name="payment" value="Cash on Delivery" checked onclick="showPaymentFields()">
+                    <span>📦 Cash on Delivery</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="UPI" onclick="showPaymentFields()">
+                    <span>📱 UPI Payment</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Card" onclick="showPaymentFields()">
+                    <span>💳 Debit / Credit Card</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Net Banking" onclick="showPaymentFields()">
+                    <span>🏦 Net Banking</span>
+                </label>
+            </div>
+
+            <!-- UPI -->
+            <div id="upiFields" class="payment-fields" style="display:none;">
+                <input type="text" id="upiId" placeholder="Enter UPI ID (example@upi)">
+            </div>
+
+            <!-- CARD -->
+            <div id="cardFields" class="payment-fields" style="display:none;">
+                <input type="text" id="cardName" placeholder="Card Holder Name">
+                <input type="text" id="cardNumber" placeholder="Card Number">
+                
+                <div class="payment-row">
+                    <input type="text" id="expiry" placeholder="MM/YY">
+                    <input type="password" id="cvv" placeholder="CVV">
+                </div>
+            </div>
+
+            <!-- NET BANKING -->
+            <div id="bankFields" class="payment-fields" style="display:none;">
+                <select id="bankName">
+                    <option value="">Select Bank</option>
+                    <option>SBI</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Canara Bank</option>
+                    <option>Axis Bank</option>
+                </select>
+                <input type="text" id="accountNumber" placeholder="Account Number">
+            </div>
+
+            <button class="pay-btn" onclick="confirmPayment()">Confirm Payment</button>
+        </div>
+
+        <div class="payment-right">
+            <h3>🛒 Order Summary</h3>
+            <div id="paymentSummary"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
